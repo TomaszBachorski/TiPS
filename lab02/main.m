@@ -13,7 +13,7 @@ shape_coef(y2)
 f=10;
 y3 = A*sawtooth(2*t*pi*f);
 shape_coef(y3)
-% latwo zauwazyc ze wspolczynnik ksztaltu przy zmianie czestotliwoœci nie
+% latwo zauwazyc ze wspolczynnik ksztaltu przy zmianie czestotliwosci nie
 % zmienia sie
 %y3 = pi*square(2*t*pi*f);
 
