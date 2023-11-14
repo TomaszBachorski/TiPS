@@ -37,7 +37,7 @@ plot(lags, tx_rx);
 tx_rx(lags<0) = [];
 lags(lags<0) = [];
 [c_max,max_idx] = max(tx_rx);
-szukana = ((max_idx/2)/1000000)*speed_of_sound %0.3402 metra
+distance_of_single_period = ((max_idx/2)/1000000)*speed_of_sound %0.3402 metra
 
 clear all; close all; clc;
 %Sygnaly dlugie
