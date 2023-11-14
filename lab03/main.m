@@ -68,6 +68,8 @@ clear all; close all; clc;
 %Cwiczenie 2
 %kiedys kurwa zrobie bo pierdolca juz dostaje
 
+%A*1/2*1/N sum(cos(alfa))
+%1/2 *A*sin(alfa)
 
 clear all; close all; clc;
 %Cwiczenie 3
