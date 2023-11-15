@@ -1,29 +1,8 @@
 clc; close all; clear all;
-%kod z zajec
+%Caly ten kod to sa rozwiazania zadan z domieszka kodow z zajec, wiec
+%usuncie to co jest niepotrzebne c:
 
-ssss = load('signals.dat');
-s1 = ssss(1,:);
-f=2;
-Tp=0.001;
-t=0:Tp:5-Tp;
-
-s0 = sin(2*pi*f*t);
-plot(t,s0,t,s1);
-[s1c,lags] = xcorr(s0,s1);
-figure;
-plot(lags,s1c);
-% 7 bo takie bylo przesuniecie
-% (7*2*pi*f*Tp)*(180/pi) 5.04
-idx = find(s1c==max(s1c));
-% przesuniecie w probkach
-time_shift_samples = lags(idx)
-% przesuniecie w czasie
-time_shift_seconds = time_shift_samples * Tp;
-speed_of_sound = 340;
-% dystans w dwie strony dlatego przez 2
-distance = (time_shift_seconds * speed_of_sound) / 2
-
-clc;clear all; close all;
+%Cwiczenie 1
 %Sygnaly krotkie
 speed_of_sound = 340;
 rx=load('rx_short.dat');
@@ -64,10 +43,25 @@ distance = Tp*(x/2)*speed_of_sound %przez dwa bo tam i spowrotem, oraz kazdy syg
 %Odleglosc w metrach
 %Wynik wyglada sensownie bo w sumie im dalsza probka tym dluzej ten sygnal
 %musial isc wiec dystans powinien byc coraz wiekszy
+
 clear all; close all; clc;
 %Cwiczenie 2
-%kiedys kurwa zrobie bo pierdolca juz dostaje
+ssss = load('signals.dat');
 
+f=2;
+Tp=0.001;
+t=0:Tp:5-Tp;
+s0 = sin(2*pi*f*t);
+for i=1:4
+    s1 = ssss(i,:);
+    plot(t,s0,t,s1);
+    [s1c,lags] = xcorr(s0,s1);
+    %figure; plot(lags,s1c);
+    %przesuniecie znalezione matematycznie
+    idx = find(s1c==max(s1c));
+    time_shift_samples(i) = lags(idx);
+end
+time_shift_samples
 %A*1/2*1/N sum(cos(alfa))
 %1/2 *A*sin(alfa)
 
@@ -91,10 +85,3 @@ for i=1:length(x)-1
 end
 %average between peaks
 mean(breaks)
-
-
-
-
-
-
-
