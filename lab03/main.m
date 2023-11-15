@@ -60,9 +60,12 @@ for i=1:4
     %przesuniecie znalezione matematycznie
     idx = find(s1c==max(s1c));
     time_shift_samples(i) = lags(idx);
+
+    A(i)=2*s1c(idx)/(5000)
+
 end
 (time_shift_samples*2*pi*f*Tp)*(180/pi)
-
+A
 %A*1/2*1/N sum(cos(alfa))
 %1/2 *A*sin(alfa)
 
