@@ -81,11 +81,10 @@ save('plamy_wektor.mat', 'sun_vector');
 figure;
 plot(lags,sun_cor);
 findpeaks(sun_cor,'MinPeakDistance',85);
-%ponizsze liczby wektora x to dystans w miesiacach*2?
 [v, x] = findpeaks(sun_cor,'MinPeakDistance',85)
 
 for i=1:length(x)-1
-    breaks(i) = x(i+1)-x(i)
+    breaks(i) = x(i+1)-x(i);
 end
 %average between peaks
 mean(breaks)
