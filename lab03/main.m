@@ -1,6 +1,5 @@
 clc; close all; clear all;
 %Caly ten kod to sa rozwiazania zadan z domieszka kodow z zajec, wiec
-%usuncie to co jest niepotrzebne c:
 
 %Cwiczenie 1
 %Sygnaly krotkie
@@ -61,14 +60,17 @@ for i=1:4
     idx = find(s1c==max(s1c));
     time_shift_samples(i) = lags(idx);
 
-    A(i)=2*s1c(idx)/(5000)
+    %A(i)=2*s1c(idx)/(5000) to nielegalne
 
+    A(i)=mean(abs(s1))*pi/2;
 end
 (time_shift_samples*2*pi*f*Tp)*(180/pi)
 A
 %A*1/2*1/N sum(cos(alfa))
 %1/2 *A*sin(alfa)
-
+% phi = 4.3200   19.4400   45.3600  169.9200
+% A = 0.1127    0.5662    1.2599    3.4287 
+% roznice wynikaja z wykorzystanych metod numerycznych
 clear all; close all; clc;
 %Cwiczenie 3
 sun=load('spotsMod.csv');
