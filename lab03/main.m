@@ -61,8 +61,7 @@ for i=1:4
     time_shift_samples(i) = lags(idx);
 
     %A(i)=2*s1c(idx)/(5000) to nielegalne
-
-    A(i)=mean(abs(s1))*pi/2;
+    %A(i)=mean(abs(s1))*pi/2; to też nielegalne
 end
 (time_shift_samples*2*pi*f*Tp)*(180/pi)
 A
